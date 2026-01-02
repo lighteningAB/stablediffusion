@@ -1,0 +1,33 @@
+name: stabledif
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  # --- Python ---
+  - python=3.10
+
+  # --- Core ML stack ---
+  - pytorch>=2.1
+  - torchvision
+  - torchaudio
+
+  # --- Diffusion stack ---
+  - transformers>=4.36
+  - diffusers>=0.25
+  - accelerate>=0.25
+  - safetensors
+
+  # --- Image & utils ---
+  - pillow
+  - numpy
+  - tqdm
+
+  # --- Optional but recommended ---
+  - sentencepiece
+  - protobuf
+
+  # --- Pip-only deps ---
+  - pip
+  - pip:
+      # Z-Image-Turbo sometimes relies on bleeding-edge diffusers utils
+      - huggingface-hub>=0.20

@@ -8,7 +8,7 @@ dtype = torch.bfloat16
 
 pipe = ZImagePipeline.from_pretrained(
     "Tongyi-MAI/Z-Image-Turbo",
-    torch_dtype=dtype,
+    dtype=dtype,
     low_cpu_mem_usage=False,
 ).to("mps")
 
@@ -39,5 +39,5 @@ image = pipe(
     guidance_scale=0.0,
 ).images[0]
 
-image.save("out3.png")
+image.save("out.png")
 print("Saved image")
